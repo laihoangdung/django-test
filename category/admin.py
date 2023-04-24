@@ -3,7 +3,7 @@ from category.models import Category
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ["id", "name"]
+    list_display = ["id", "name", "status"]
     fieldsets = [
         (
             "Category name",
@@ -15,6 +15,12 @@ class CategoryAdmin(admin.ModelAdmin):
             "Write a summary about this category",
             {
                 "fields": ["desc"]
+            }
+        ),
+        (
+            "Status",
+            {
+                "fields": ["status"]
             }
         )
     ]
