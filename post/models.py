@@ -4,7 +4,7 @@ from category.models import Category
 
 # Create your models here.
 class Post(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=255)
     content = models.TextField(blank=True)
     pub_date = models.DateTimeField(auto_now=False, auto_now_add=False, null=True)
